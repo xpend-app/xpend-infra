@@ -4,8 +4,8 @@ services:
       region: frankfurt
       env: node
       repo: https://github.com/xpend-app/xpend-watcher.git
-      buildCommand: "yarn && yarn build"
-      startCommand: "yarn start"
+      buildCommand: "pnpm i && pnpm build"
+      startCommand: "pnpm start"
       envVars:
           - key: WATCHER_BROKER_URL
             fromService:
