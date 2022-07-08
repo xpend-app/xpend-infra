@@ -3,6 +3,7 @@ services:
       name: xpend-watcher
       region: frankfurt
       env: node
+      repo: https://github.com/xpend-app/xpend-watcher.git
       buildCommand: "yarn && yarn build"
       startCommand: "yarn start"
       envVars:
