@@ -9,8 +9,4 @@ services:
       startCommand: yarn start:prod
       healthCheckPath: /healthCheck
       envVars:
-          - key: WATCHER_BROKER_URL
-            fromService:
-                name: xpend-watcher-broker
-                type: redis
-                property: connectionString
+          - fromGroup: xpend-env
