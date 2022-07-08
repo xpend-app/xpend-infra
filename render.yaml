@@ -1,23 +1,4 @@
 services:
-    - type: worker
-      name: xpend-watcher
-      region: frankfurt
-      env: node
-      repo: https://github.com/xpend-app/xpend-watcher.git
-      buildCommand: pnpm i && pnpm build
-      startCommand: pnpm start
-      envVars:
-          - key: WATCHER_BROKER_URL
-            fromService:
-                name: xpend-watcher-broker
-                type: redis
-                property: connectionString
-    - type: redis
-      name: xpend-watcher-broker
-      region: frankfurt
-      plan: free
-      maxmemoryPolicy: noeviction # recommended policy for queues
-      ipAllowList: [] # only allow internal connections
     - type: web
       name: xpend
       region: frankfurt
